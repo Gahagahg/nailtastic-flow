@@ -1,24 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Calendar, Users, BarChart3, Smartphone, Clock, Heart, Star, Sparkles } from "lucide-react";
+import { CheckCircle, Calendar, Users, BarChart3, Smartphone, Clock, Heart, Star, Sparkles, Shield, TrendingUp, MessageSquare } from "lucide-react";
 import heroImage from "@/assets/hero-beauty.jpg";
 import dashboardPreview from "@/assets/dashboard-preview.jpg";
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-soft">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-primary/10 z-50">
+      <header className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-border z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <Sparkles className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold bg-gradient-hero bg-clip-text text-transparent">
-              BeautyBook
+            <div className="w-8 h-8 bg-gradient-hero rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">C</span>
+            </div>
+            <span className="text-2xl font-bold text-foreground">
+              CLIVY
             </span>
           </div>
-          <Button variant="hero" size="lg">
-            Começar Agora
+          <Button variant="default" size="lg" className="bg-primary hover:bg-primary/90">
+            Comece agora por R$1,70/dia
           </Button>
         </div>
       </header>
@@ -28,35 +30,41 @@ const LandingPage = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
-                ✨ Transforme seu negócio
-              </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6 text-foreground">
+                Organize sua agenda.
+                <br />
                 <span className="bg-gradient-hero bg-clip-text text-transparent">
-                  Você quer viver
+                  Cresça seu estúdio.
                 </span>
                 <br />
-                do seu sonho?
+                Lucre mais.
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                A gente tem o <strong>mapa</strong>. Aumente seu faturamento, organize seus agendamentos 
-                e transforme sua paixão por beleza em um negócio de sucesso.
+                Com o CLIVY, você para de perder clientes, agenda e dinheiro. 
+                Tudo que você precisa para organizar sua rotina está em um só lugar.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button variant="hero" size="lg" className="text-lg px-8 py-6">
-                  <Heart className="mr-2 h-5 w-5" />
-                  Quero ganhar mais dinheiro
+                <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90">
+                  <TrendingUp className="mr-2 h-5 w-5" />
+                  Comece agora por R$1,70/dia
                 </Button>
-                <Button variant="elegant" size="lg" className="text-lg px-8 py-6">
-                  Ver demonstração
-                </Button>
+              </div>
+              <div className="flex items-center gap-6 mt-6 text-sm text-muted-foreground justify-center lg:justify-start">
+                <span className="flex items-center gap-1">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Sem contrato
+                </span>
+                <span className="flex items-center gap-1">
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  Cancele quando quiser
+                </span>
               </div>
             </div>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-hero rounded-3xl blur-3xl opacity-30 animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-hero rounded-3xl blur-3xl opacity-20"></div>
               <img 
-                src={heroImage} 
-                alt="Workspace profissional de nail designer e lash designer" 
+                src={dashboardPreview} 
+                alt="Interface do CLIVY no celular e desktop" 
                 className="relative z-10 rounded-3xl shadow-elegant w-full"
               />
             </div>
@@ -64,222 +72,109 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section className="py-20 px-4 bg-white">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold mb-8">
-            Cansada de <span className="text-primary">perder clientes</span> por desorganização?
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="p-6">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8 text-red-500" />
-              </div>
-              <h3 className="font-semibold mb-2">Agendamentos confusos</h3>
-              <p className="text-muted-foreground">Papel, WhatsApp, caderno... e no final sempre dá problema</p>
-            </div>
-            <div className="p-6">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-red-500" />
-              </div>
-              <h3 className="font-semibold mb-2">Clientes esquecidos</h3>
-              <p className="text-muted-foreground">Sem lembrete automático, faltam e você perde dinheiro</p>
-            </div>
-            <div className="p-6">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BarChart3 className="h-8 w-8 text-red-500" />
-              </div>
-              <h3 className="font-semibold mb-2">Sem controle financeiro</h3>
-              <p className="text-muted-foreground">Não sabe quanto ganha, quanto deve receber</p>
-            </div>
-          </div>
-          <h3 className="text-2xl font-bold text-primary">
-            É hora de parar de trabalhar MAIS e começar a trabalhar MELHOR! 💎
-          </h3>
-        </div>
-      </section>
-
-      {/* Solution Section */}
-      <section className="py-20 px-4 bg-gradient-soft">
+      {/* Before/After Section */}
+      <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
-              <span className="bg-gradient-hero bg-clip-text text-transparent">
-                Como funciona o BeautyBook?
-              </span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Sistema completo pensado especialmente para nail designers e lash designers 
-              que querem profissionalizar e aumentar o faturamento
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-            <img 
-              src={dashboardPreview} 
-              alt="Preview do painel de agendamentos" 
-              className="rounded-2xl shadow-elegant"
-            />
-            <div className="space-y-8">
-              <div className="flex gap-4">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white font-bold">1</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Agenda Online Inteligente</h3>
-                  <p className="text-muted-foreground">
-                    Suas clientes agendam sozinhas, escolhem horários disponíveis. 
-                    Acabou o vai-e-vem no WhatsApp!
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex gap-4">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white font-bold">2</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Lembretes Automáticos</h3>
-                  <p className="text-muted-foreground">
-                    Sistema envia lembretes por WhatsApp e email. Diminui faltas em 80%!
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white font-bold">3</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Controle Financeiro</h3>
-                  <p className="text-muted-foreground">
-                    Veja quanto ganha por mês, por serviço, acompanhe recebimentos. 
-                    Tenha o controle nas suas mãos!
-                  </p>
-                </div>
-              </div>
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Antes do CLIVY */}
+            <div className="bg-white rounded-2xl p-8 shadow-soft">
+              <h3 className="text-2xl font-bold mb-6 text-red-600">Antes do CLIVY:</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-red-600 text-sm">✕</span>
+                  </div>
+                  <span className="text-muted-foreground">Marca cliente no WhatsApp e ela não aparece</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-red-600 text-sm">✕</span>
+                  </div>
+                  <span className="text-muted-foreground">Você esquece horários ou anota errado</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-red-600 text-sm">✕</span>
+                  </div>
+                  <span className="text-muted-foreground">Perde tempo respondendo e organizando tudo na mão</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-red-600 text-sm">✕</span>
+                  </div>
+                  <span className="text-muted-foreground">Fica sem saber quanto lucrou no mês</span>
+                </li>
+              </ul>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Features Section */}
-      <section className="py-20 px-4 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
-              Tudo que você precisa em <span className="text-primary">um só lugar</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="border-primary/20 shadow-soft hover:shadow-elegant transition-all duration-300">
-              <CardHeader>
-                <Calendar className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Agenda Inteligente</CardTitle>
-                <CardDescription>
-                  Agendamentos online 24h, horários personalizáveis, bloqueio automático
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="border-primary/20 shadow-soft hover:shadow-elegant transition-all duration-300">
-              <CardHeader>
-                <Smartphone className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>App Mobile</CardTitle>
-                <CardDescription>
-                  Acesse de qualquer lugar, receba notificações, gerencie na palma da mão
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="border-primary/20 shadow-soft hover:shadow-elegant transition-all duration-300">
-              <CardHeader>
-                <BarChart3 className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Relatórios Completos</CardTitle>
-                <CardDescription>
-                  Faturamento, serviços mais procurados, horários de pico, tudo em gráficos
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="border-primary/20 shadow-soft hover:shadow-elegant transition-all duration-300">
-              <CardHeader>
-                <Users className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Gestão de Clientes</CardTitle>
-                <CardDescription>
-                  Histórico completo, preferências, aniversários, fidelização automática
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="border-primary/20 shadow-soft hover:shadow-elegant transition-all duration-300">
-              <CardHeader>
-                <Heart className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Marketing Automático</CardTitle>
-                <CardDescription>
-                  Campanhas de retorno, promoções personalizadas, mais vendas no piloto automático
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="border-primary/20 shadow-soft hover:shadow-elegant transition-all duration-300">
-              <CardHeader>
-                <Star className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Suporte VIP</CardTitle>
-                <CardDescription>
-                  Suporte 100% em português, treinamento completo, você nunca fica sozinha
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            {/* Com o CLIVY */}
+            <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 border border-primary/20">
+              <h3 className="text-2xl font-bold mb-6 text-primary">Com o CLIVY:</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground font-medium">Agenda online com confirmação automática</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground font-medium">Lembrete por WhatsApp para o cliente não esquecer</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground font-medium">App simples com tudo em um só lugar</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground font-medium">Relatórios de lucro, gastos e metas mensais</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Testimonial Section */}
-      <section className="py-20 px-4 bg-gradient-soft">
+      <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold mb-12">
-            O que nossas <span className="text-primary">parceiras</span> estão dizendo
+          <h2 className="text-4xl font-bold mb-12 text-foreground">
+            O que nossas <span className="bg-gradient-hero bg-clip-text text-transparent">parceiras</span> estão dizendo
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-primary/20 shadow-elegant">
+            <Card className="border-primary/20 shadow-soft">
               <CardContent className="p-8">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-lg mb-6 italic">
-                  "Aumentei meu faturamento em 40% no primeiro mês! As clientes adoram agendar online 
-                  e eu não perco mais tempo com WhatsApp."
+                <p className="text-lg mb-6 italic text-muted-foreground">
+                  "Antes do Clivy era tudo no caderninho e na sorte. Agora tenho agenda cheia e sem dor de cabeça."
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-gradient-hero rounded-full"></div>
                   <div className="text-left">
-                    <div className="font-semibold">Marina Silva</div>
+                    <div className="font-semibold text-foreground">Luiza Silva</div>
                     <div className="text-sm text-muted-foreground">Nail Designer - SP</div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-primary/20 shadow-elegant">
+            <Card className="border-primary/20 shadow-soft">
               <CardContent className="p-8">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-lg mb-6 italic">
-                  "Melhor investimento que fiz! Agora tenho tempo para focar no que amo: 
-                  fazer cílios lindos. O sistema cuida do resto."
+                <p className="text-lg mb-6 italic text-muted-foreground">
+                  "Finalmente entendi quanto estou ganhando e o que preciso fazer para crescer."
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-gradient-hero rounded-full"></div>
                   <div className="text-left">
-                    <div className="font-semibold">Ana Costa</div>
+                    <div className="font-semibold text-foreground">Camila Costa</div>
                     <div className="text-sm text-muted-foreground">Lash Designer - RJ</div>
                   </div>
                 </div>
@@ -289,120 +184,121 @@ const LandingPage = () => {
         </div>
       </section>
 
+
       {/* Pricing Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
-              Invista no seu <span className="bg-gradient-hero bg-clip-text text-transparent">futuro</span>
+            <h2 className="text-4xl font-bold mb-6 text-foreground">
+              💎 <span className="bg-gradient-hero bg-clip-text text-transparent">Plano Completo</span> – Tudo incluso
             </h2>
             <p className="text-xl text-muted-foreground">
-              Por menos que uma unha de cliente, tenha o sistema completo
+              Menos de R$ 1,70 por dia!
             </p>
           </div>
 
-          <Card className="border-primary shadow-elegant max-w-md mx-auto relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-hero"></div>
-            <CardHeader className="text-center pb-2">
-              <Badge className="bg-gradient-hero text-white w-fit mx-auto mb-4">
-                🎉 OFERTA ESPECIAL
-              </Badge>
-              <CardTitle className="text-3xl">Plano Completo</CardTitle>
+          <Card className="border-primary/30 shadow-elegant max-w-lg mx-auto relative overflow-hidden bg-white">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-hero"></div>
+            <CardHeader className="text-center pb-6">
               <div className="flex items-center justify-center gap-2 mt-4">
-                <span className="text-5xl font-bold text-primary">R$ 49</span>
+                <span className="text-6xl font-bold bg-gradient-hero bg-clip-text text-transparent">R$ 49</span>
                 <div className="text-left">
-                  <div className="text-sm text-muted-foreground">90</div>
-                  <div className="text-sm text-muted-foreground">/mês</div>
+                  <div className="text-lg text-muted-foreground">,90</div>
+                  <div className="text-lg text-muted-foreground">/mês</div>
                 </div>
               </div>
-              <p className="text-muted-foreground mt-2">
+              <p className="text-muted-foreground mt-2 text-lg">
                 Menos de R$ 1,70 por dia
               </p>
             </CardHeader>
-            <CardContent className="pt-6">
-              <ul className="space-y-4 mb-8">
+            <CardContent className="pt-0">
+              <div className="grid grid-cols-2 gap-3 mb-8">
                 {[
                   "Agenda online ilimitada",
+                  "App para celular",
                   "Lembretes automáticos por WhatsApp",
-                  "Relatórios financeiros completos",
-                  "App mobile incluído",
-                  "Gestão completa de clientes",
-                  "Marketing automático",
-                  "Suporte VIP em português",
-                  "Treinamento completo",
-                  "Atualizações gratuitas",
-                  "Backup automático dos dados"
+                  "Relatórios financeiros",
+                  "Campanhas de marketing",
+                  "Suporte via WhatsApp",
+                  "Backup automático",
+                  "Sem contrato"
                 ].map((feature, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span>{feature}</span>
-                  </li>
+                  <div key={index} className="flex items-start gap-2">
+                    <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">{feature}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
               
-              <Button variant="hero" size="lg" className="w-full text-lg py-6">
-                <Heart className="mr-2 h-5 w-5" />
-                Começar minha transformação
+              <Button size="lg" className="w-full text-lg py-6 bg-primary hover:bg-primary/90 mb-4">
+                <TrendingUp className="mr-2 h-5 w-5" />
+                👉 Comece agora por R$1,70/dia
               </Button>
               
-              <p className="text-sm text-center text-muted-foreground mt-4">
-                ✅ 7 dias grátis • ✅ Cancele quando quiser • ✅ Suporte 24h
-              </p>
+              <div className="flex items-center justify-center gap-1 text-sm text-muted-foreground">
+                <Shield className="h-4 w-4" />
+                Sem contrato, sem taxa escondida, sem enrolação
+              </div>
             </CardContent>
           </Card>
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="py-20 px-4 bg-gradient-hero text-white">
+      {/* Guarantee Section */}
+      <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Pronta para transformar seu negócio de beleza?
+          <h2 className="text-4xl font-bold mb-6 text-foreground">
+            <span className="bg-gradient-hero bg-clip-text text-transparent">Você</span> sem risco nenhum
           </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Junte-se a centenas de profissionais que já aumentaram seu faturamento 
-            e organizaram sua agenda com o BeautyBook
+          <p className="text-xl text-muted-foreground mb-8">
+            Use o CLIVY por 7 dias. Se não amar, é só cancelar.
+          </p>
+          <p className="text-lg font-semibold text-foreground mb-8">
+            Sem contrato, sem taxa escondida, sem enrolação.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Button variant="secondary" size="lg" className="text-lg px-8 py-6">
-              <Sparkles className="mr-2 h-5 w-5" />
-              Começar 7 dias grátis
-            </Button>
-            <span className="text-sm opacity-75">
-              Sem compromisso • Cancele quando quiser
-            </span>
+          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 mb-8">
+            <p className="text-2xl font-bold text-foreground">
+              ➡️ Quanto mais você espera, mais horários você perde.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 text-center mt-12">
+          <Button size="lg" className="text-lg px-12 py-6 bg-primary hover:bg-primary/90">
+            <TrendingUp className="mr-2 h-5 w-5" />
+            Começar agora por R$1,70/dia
+          </Button>
+
+          <div className="grid md:grid-cols-3 gap-8 text-center mt-16">
             <div>
-              <div className="text-3xl font-bold">+500</div>
-              <div className="text-sm opacity-75">Profissionais atendidas</div>
+              <div className="text-4xl font-bold text-primary mb-2">+500</div>
+              <div className="text-sm text-muted-foreground">Profissionais atendidas</div>
             </div>
             <div>
-              <div className="text-3xl font-bold">+40%</div>
-              <div className="text-sm opacity-75">Aumento no faturamento</div>
+              <div className="text-4xl font-bold text-primary mb-2">+40%</div>
+              <div className="text-sm text-muted-foreground">Aumento no faturamento</div>
             </div>
             <div>
-              <div className="text-3xl font-bold">-80%</div>
-              <div className="text-sm opacity-75">Redução de faltas</div>
+              <div className="text-4xl font-bold text-primary mb-2">-80%</div>
+              <div className="text-sm text-muted-foreground">Redução de faltas</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 bg-white border-t">
+      <footer className="py-12 px-4 bg-muted/30 border-t">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <Sparkles className="h-8 w-8 text-primary" />
-              <span className="text-2xl font-bold bg-gradient-hero bg-clip-text text-transparent">
-                BeautyBook
+              <div className="w-8 h-8 bg-gradient-hero rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">C</span>
+              </div>
+              <span className="text-2xl font-bold text-foreground">
+                CLIVY
               </span>
             </div>
             <div className="text-sm text-muted-foreground">
-              © 2024 BeautyBook. Transformando negócios de beleza.
+              © 2024 CLIVY. Transformando negócios de beleza.
             </div>
           </div>
         </div>
